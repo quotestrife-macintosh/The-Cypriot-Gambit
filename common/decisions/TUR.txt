@@ -88,6 +88,7 @@ TUR_the_constitutional_arrows_category = {
 		}
 		
 		fire_only_once = no
+		fixed_random_seed = yes
 		
 		visible = {
 			has_completed_focus = TUR_ratify_the_six_arrows
@@ -247,7 +248,6 @@ TUR_the_constitutional_arrows_category = {
 			}
 			hidden_effect = {
 				set_country_flag = { flag = TUR_stoked_secularism_flag value = 1 days = 60 }
-				TUR_end_islamist_sectarianism_effect = yes				
 			}
 		}
 	}
@@ -699,7 +699,6 @@ TUR_the_constitutional_arrows_category = {
 			}
 			hidden_effect = {
 				set_country_flag = { flag = TUR_stoked_jihad_flag value = 1 days = 100 }
-				TUR_end_islamist_sectarianism_effect = yes
 			}
 		}
 	}
@@ -959,10 +958,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				OR = {	
-					has_country_flag = TUR_five_year_reforms
-					has_country_flag = TUR_five_year1
-				}
 			}
 		}
 		
@@ -985,7 +980,7 @@ TUR_industrial_projects_category = {
 		days_remove = 180
 
 		cost = TUR_etatism_cost_penalty_var?50
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -998,7 +993,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five1 
 			}
 		}
 
@@ -1015,80 +1009,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_open_the_nazilli_callico_factory_five = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five1
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			339 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = { flag = TUR_five_year1 }
-			}
-		}
-
-		remove_effect = {
-			339 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_finance_the_bursa_merinos_factory = {
 	
 		icon = generic_factory
@@ -1109,8 +1029,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year2
-				has_country_flag = TUR_five_year_reforms
 			}
 		}
 		
@@ -1146,7 +1064,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five2 
 			}
 		}
 
@@ -1163,80 +1080,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_finance_the_bursa_merinos_factory_five = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five2
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			340 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year2
-			}
-		}
-
-		remove_effect = {
-			340 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_fund_the_gemlik_silk_factory = {
 	
 		icon = generic_factory
@@ -1257,8 +1100,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year3
-				has_country_flag = TUR_five_year_reforms
 			}
 		}
 		
@@ -1294,7 +1135,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five3
 			}
 		}
 
@@ -1311,79 +1151,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_fund_the_gemlik_silk_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five3
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			340 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year3
-			}
-		}
-
-		remove_effect = {
-			340 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_construct_the_zonguldak_coal_refinery = {
 	
 		icon = generic_factory
@@ -1404,8 +1171,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year4
-				has_country_flag = TUR_five_year_reforms				
 			}
 		}
 		
@@ -1442,7 +1207,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 260 }
-				set_country_flag = TUR_five4
 			}
 		}
 
@@ -1459,81 +1223,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_construct_the_zonguldak_coal_refineryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five4
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			347 = { 
-				free_building_slots = {
-					building = synthetic_refinery
-					size > 1
-					include_locked = yes
-				}
-			}
-			has_tech = synth_oil_experiments
-		}
-
-		days_remove = 120
-
-		cost = 75
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 120 }
-				set_country_flag = TUR_five_year4
-			}
-		}
-
-		remove_effect = {
-			347 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_modernise_the_general_directorate_of_military_factories = {
 	
 		icon = generic_factory
@@ -1546,11 +1235,7 @@ TUR_industrial_projects_category = {
 		
 		visible = {
 			has_completed_focus = TUR_the_sanayiciler
-			NOT = { 
-				has_completed_focus = TUR_fully_integrate_the_is_bank 
-				has_country_flag = TUR_five_year5
-				has_country_flag = TUR_five_year_reforms
-			}
+			NOT = { has_completed_focus = TUR_fully_integrate_the_is_bank }
 		}
 		
 		available = {
@@ -1596,7 +1281,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 240 }
-				set_country_flag = TUR_five5
 			}
 		}
 
@@ -1629,101 +1313,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_modernise_the_general_directorate_of_military_factoriesfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = { 
-				has_completed_focus = TUR_fully_integrate_the_is_bank 
-				has_country_flag = TUR_five5
-			}
-		}
-		
-		available = {
-			NOT = { 
-				has_country_flag = TUR_financing_private_enterprise_flag
-			}
-			49 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 2
-					include_locked = yes
-				}
-			}
-			797 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 1
-					include_locked = yes
-				}
-			}
-			339 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 100
-
-		cost = 150
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 100 }
-				set_country_flag = TUR_five_year5
-			}
-		}
-
-		remove_effect = {
-			49 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			797 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			339 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_authorise_the_nuri_killigil_factory = {
 	
 		icon = generic_factory
@@ -1744,8 +1333,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year_reforms
-				has_country_flag = TUR_five_year6
 			}
 		}
 		
@@ -1781,7 +1368,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five6
 			}
 		}
 
@@ -1806,88 +1392,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_authorise_the_nuri_killigil_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five6
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			797 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year6
-			}
-		}
-
-		remove_effect = {
-			797 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-			add_popularity = {
-   				ideology = fascism
-   	 			popularity = 0.05
-			}
-			show_ideas_tooltip = TUR_nuri_killigil
-			hidden_effect = {
-				set_country_flag = TUR_sponsored_killigil_armaments_flag
-			}
-		}
-	}
-	
 	TUR_sponsor_the_nuri_demirag_besiktas_aircraft_factory = {
 	
 		icon = generic_factory
@@ -1908,8 +1412,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year7
-				has_country_flag = TUR_five_year_reforms
 			}
 		}
 		
@@ -1931,9 +1433,9 @@ TUR_industrial_projects_category = {
 		}
 
 		days_remove = 240
-		
+
 		cost = TUR_etatism_cost_penalty_var?50
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -1946,7 +1448,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 260 }
-				set_country_flag = TUR_five7
 			}
 		}
 
@@ -1964,82 +1465,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_sponsor_the_nuri_demirag_besiktas_aircraft_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five7
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			797 = { 
-				free_building_slots = {
-					building = arms_factory
-					size > 1
-					include_locked = yes
-				}
-			}
-			has_idea = TUR_nuri_demirag
-		}
-
-		days_remove = 120
-		
-		cost = 25
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 120 }
-				set_country_flag = TUR_five_year7
-			}
-		}
-
-		remove_effect = {
-			797 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-			add_equipment_to_stockpile = { type = fighter_equipment amount = 50 }
-		}
-	}
-	
 	TUR_invest_in_malatya_cigarette_factory = {
 	
 		icon = generic_factory
@@ -2060,8 +1485,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year8
-				has_country_flag = TUR_five_year_reforms
 			}
 		}
 		
@@ -2097,7 +1520,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five8
 			}
 		}
 
@@ -2114,80 +1536,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_invest_in_malatya_cigarette_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five8
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			344 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year8
-			}
-		}
-
-		remove_effect = {
-			344 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_bankroll_the_malatya_clothing_factory = {
 	
 		icon = generic_factory
@@ -2208,8 +1556,6 @@ TUR_industrial_projects_category = {
 					}
 					has_completed_focus = TUR_nationalise_all_private_industry
 				}
-				has_country_flag = TUR_five_year9
-				has_country_flag = TUR_five_year_reforms
 			}
 		}
 		
@@ -2245,7 +1591,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five9
 			}
 		}
 
@@ -2262,80 +1607,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_bankroll_the_malatya_clothing_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}
-				has_country_flag = TUR_five9 
-			}
-		}
-		
-		available = {
-			NOT = { 
-				OR = {
-					has_completed_focus = TUR_nationalise_all_private_industry 
-					has_country_flag = TUR_financing_private_enterprise_flag
-				}
-			}
-			344 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year9
-			}
-		}
-
-		remove_effect = {
-			344 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
 	TUR_subsidise_the_karabuk_iron_steel_factory = {
 	
 		icon = generic_factory
@@ -2348,10 +1619,6 @@ TUR_industrial_projects_category = {
 		
 		visible = {
 			has_completed_focus = TUR_the_sanayiciler
-			NOT = {
-				has_country_flag = TUR_five_year_reforms
-				has_country_flag = TUR_five_year10
-			}
 		}
 		
 		available = {
@@ -2381,7 +1648,6 @@ TUR_industrial_projects_category = {
 			add_ideas = TUR_financing_private_enterprise
 			hidden_effect = {
 				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 300 }
-				set_country_flag = TUR_five10
 			}
 		}
 
@@ -2404,517 +1670,6 @@ TUR_industrial_projects_category = {
 		}
 	}
 
-	TUR_subsidise_the_karabuk_iron_steel_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				has_country_flag = TUR_five10
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			347 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 140
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 140 }
-				set_country_flag = TUR_five_year10
-			}
-		}
-
-		remove_effect = {
-			add_resource = {
-				type = steel
-				amount = 4
-				state = 347
-			}
-			347 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-			set_country_flag = TUR_karabuk_iron_steel_factory_modernised_flag
-		}
-	}
-
-
-
-
-
-	TUR_finance_the_bitlis_cigarette_factory = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five_year_reforms
-				has_country_flag = TUR_five_year11
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			352 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 180
-
-		cost = TUR_etatism_cost_penalty_var?50
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five11
-			}
-		}
-
-		remove_effect = {
-			352 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-
-	TUR_finance_the_bitlis_cigarette_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five11
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			352 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year11
-			}
-		}
-
-		remove_effect = {
-			352 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-
-
-
-	TUR_construct_the_izmir_chlorine_factory = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five_year_reforms
-				has_country_flag = TUR_five_year12
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			339 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 180
-
-		cost = TUR_etatism_cost_penalty_var?50
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five12
-			}
-		}
-
-		remove_effect = {
-			339 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-
-	TUR_construct_the_izmir_chlorine_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five12
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			339 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year12
-			}
-		}
-
-		remove_effect = {
-			339 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-	
-	
-	
-
-	TUR_fund_the_sivas_cement_factory = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five_year_reforms
-				has_country_flag = TUR_five_year13
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			349 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-				free_building_slots = {
-					building = infrastructure
-					size > 1
-					include_locked = yes
-				}					
-			}
-		}
-
-		days_remove = 180
-
-		cost = TUR_etatism_cost_penalty_var?50
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 200 }
-				set_country_flag = TUR_five13
-			}
-		}
-
-		remove_effect = {
-			349 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure 
-					level = 1
-					instant_build = yes
-				}					
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}
-
-	TUR_fund_the_sivas_cement_factoryfive = {
-	
-		icon = generic_factory
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			has_completed_focus = TUR_the_sanayiciler
-			has_country_flag = TUR_five_year_reforms			
-			NOT = {
-				OR = {
-					has_country_leader = {
-						name = "Şefik Hüsnü"
-						ruling_only = yes
-					}
-					has_completed_focus = TUR_nationalise_all_private_industry
-				}			
-				has_country_flag = TUR_five13
-			}
-		}
-		
-		available = {
-			NOT = { has_country_flag = TUR_financing_private_enterprise_flag }
-			349 = { 
-				free_building_slots = {
-					building = industrial_complex
-					size > 1
-					include_locked = yes
-				}
-				free_building_slots = {
-					building = infrastructure
-					size > 1
-					include_locked = yes
-				}				
-			}
-		}
-
-		days_remove = 90
-
-		cost = 25
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_financing_private_enterprise
-			hidden_effect = {
-				set_country_flag = { flag = TUR_financing_private_enterprise_flag value = 1 days = 90 }
-				set_country_flag = TUR_five_year13
-			}
-		}
-
-		remove_effect = {
-			349 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure 
-					level = 1
-					instant_build = yes
-				}				
-			}
-			remove_ideas = TUR_financing_private_enterprise
-		}
-	}	
-	
 	TUR_sponsor_petrol_olfisis_formation = {
 	
 		icon = generic_construction
@@ -3116,65 +1871,6 @@ economy_decisions = {
 		}
 	}
 
-	TUR_reinstate_etatism = {
-	
-		icon = generic_treaty
-
-		allowed = { 
-			original_tag = TUR
-		}
-		
-		fire_only_once = yes
-		
-		visible = {
-			AND = {
-				has_completed_focus = TUR_continue_the_policy_of_etatism
-				NOT = {
-					has_idea = TUR_etatism
-					has_idea = TUR_etatism_2
-					has_idea = TUR_etatism_3
-					has_idea = TUR_etatism_4
-				}
-			}
-		}
-		
-		available = {
-			has_completed_focus = TUR_continue_the_policy_of_etatism
-			has_completed_focus = TUR_ratify_the_six_arrows
-			NOT = {
-				has_idea = low_economic_mobilisation
-				has_idea = partial_economic_mobilisation
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		}
-
-		cost = 100
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				AND = {
-					is_historical_focus_on = yes
-					date > 1946.1.1
-				}
-				factor = 5
-			}
-			modifier = {
-				is_historical_focus_on = no
-				factor = 3
-			}
-		}
-
-		complete_effect = {
-			add_ideas = TUR_etatism
-			hidden_effect = {
-				clr_country_flag = TUR_etatism_abolished
-				set_variable = { var = TUR_etatism_cost_penalty_var value = 150 }
-			}
-		}
-	}
-	
 	TUR_absorb_the_tpda = {
 	
 		icon = eng_trade_unions_support
@@ -3601,7 +2297,7 @@ economy_decisions = {
 }
 
 TUR_kurdish_state_management_category = { 
-	
+
 	TUR_kurdish_resistance_escalation_mission = {
 	
 		priority = 9
@@ -3618,9 +2314,7 @@ TUR_kurdish_state_management_category = {
 				352 = { is_core_of = TUR }
 				353 = { is_core_of = TUR }
 				800 = { is_core_of = TUR }
-				680 = { is_core_of = TUR }
 			}
-
 		}
 
 		days_mission_timeout = 80
@@ -3654,14 +2348,12 @@ TUR_kurdish_state_management_category = {
 						352 = { is_core_of = TUR }
 						353 = { is_core_of = TUR }
 						800 = { is_core_of = TUR }
-						680 = { is_core_of = TUR }
 					}
 					AND = {
 						350 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						352 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						353 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						800 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
-						680 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 					}
 				}
 			}
@@ -3716,182 +2408,7 @@ TUR_kurdish_state_management_category = {
 			
 		}
 	}
-	
 
-	
-	TUR_counter_the_kurdish_syrian_rebels = {
-
-		icon = faction_tur_kurdish
-
-		available = {
-			NOT = { has_country_flag = TUR_acted_against_kurd_rebels_recently_flag }
-			has_full_control_of_state = 680		
-		}
-
-		highlight_states = { state = 680 }
-
-		on_map_mode = map_only
-
-		custom_cost_trigger = {
-			command_power > 14
-		}
-
-		custom_cost_text = TUR_decision_cost_kurd_rebels
-
-		visible = {
-			AND = { 
-				NOT = { 680 = { is_core_of = TUR } }
-				has_full_control_of_state = 680
-			}
-			NOT = {
-				AND = { 
-					OR = {
-						has_completed_focus = TUR_permit_regional_elections
-						has_completed_focus = TUR_a_common_destiny_for_all_of_turkey
-					}
-					680 = {
-						AND = {
-							compliance > 70
-							resistance < 30
-						}
-					}
-				}
-			}
-			has_completed_focus = TUR_annul_the_ankara_anlasmasi				
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 10
-				has_political_power > 250
-			}
-			modifier = {
-				has_manpower < 50000
-				has_war = yes
-				has_political_power < 200
-				factor = 0 # don't waste pp if you need to up your conscription laws!
-			}
-			modifier = {
-				factor = 10
-				680 = { resistance > 50 }
-			}
-			modifier = {
-				factor = 0.25
-				has_stability < 0.25 #let's not risk it
-				680 = { compliance < 25 }
-			}
-		}
-
-		complete_effect = {
-			680 = { save_global_event_target_as = TUR_kurdish_state_event_target }
-			random_list = {
-				55 = {
-					modifier = {
-						factor = 0.25
-						680 = { resistance > 30 }
-					}
-					modifier = {
-						add = 5
-						has_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value = 1
-						}
-					}
-					modifier = {
-						add = 10
-						has_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value = 2
-						}
-					}
-					modifier = {
-						add = 15
-						has_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value = 3
-						}
-					}
-					modifier = {
-						add = 25
-						has_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value = 4
-						}
-					}
-					modifier = {
-						add = 100
-						has_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value > 4
-						}
-					}
-					country_event = { id = bftb_turkey.110 days = 1 }
-					TUR_placate_kurdish_state_effect = yes
-					effect_tooltip = {
-						680 = { 
-							add_compliance = 10
-							add_resistance = -15
-						}
-					}
-					hidden_effect = { 
-						if = {
-							limit = {
-								has_country_flag = TUR_failed_against_kurd_rebels_flag
-							}
-							clr_country_flag = TUR_failed_against_kurd_rebels_flag
-						}
-					}
-				}
-				45 = {
-					modifier = {
-						factor = 1.2
-						680 = { compliance > 25 }
-					}
-					country_event = { id = bftb_turkey.111 days = 1 }
-					effect_tooltip = {
-						add_stability = -0.05
-						680 = { 
-							add_compliance = -5
-							add_resistance = 10
-						}
-					}
-					hidden_effect = {
-						set_country_flag = {
-							flag = TUR_failed_against_kurd_rebels_flag
-							value = 1
-						}
-						if = {
-							limit = {
-								NOT = { has_country_flag = TUR_failed_against_kurd_rebels_flag }
-							}
-							set_country_flag = {
-								flag = TUR_failed_against_kurd_rebels_flag
-								value = 1
-							}
-						}
-						else_if = {
-							limit = {
-								has_country_flag = TUR_failed_against_kurd_rebels_flag
-							}
-							modify_country_flag = {
-								flag = TUR_failed_against_kurd_rebels_flag
-								value = 1
-							}
-						}
-					}
-				}
-			}
-			set_country_flag = TUR_acted_against_kurd_rebels_recently_flag
-			set_country_flag = {
-				flag = TUR_acted_against_kurd_rebels_recently_flag
-				value = 1
-				days = 30
-			}
-			add_command_power = -15
-		}
-	}
-	
 	TUR_counter_the_rebels_in_diyarbakir = {
 
 		icon = faction_tur_kurdish
@@ -3956,6 +2473,7 @@ TUR_kurdish_state_management_category = {
 		}
 
 		complete_effect = {
+			add_command_power = -15
 			350 = { save_global_event_target_as = TUR_kurdish_state_event_target }
 			random_list = {
 				55 = {
@@ -4060,7 +2578,6 @@ TUR_kurdish_state_management_category = {
 				value = 1
 				days = 30
 			}
-			add_command_power = -15			
 		}
 	}
 	TUR_counter_the_rebels_in_erzurum = {
@@ -4126,6 +2643,7 @@ TUR_kurdish_state_management_category = {
 		}
 
 		complete_effect = {
+			add_command_power = -15
 			353 = { save_global_event_target_as = TUR_kurdish_state_event_target }
 			random_list = {
 				55 = {
@@ -4229,7 +2747,6 @@ TUR_kurdish_state_management_category = {
 				value = 1
 				days = 30
 			}
-			add_command_power = -15			
 		}
 	}
 	TUR_counter_the_rebels_in_van = {
@@ -4295,6 +2812,7 @@ TUR_kurdish_state_management_category = {
 		}
 
 		complete_effect = {
+			add_command_power = -15
 			800 = { save_global_event_target_as = TUR_kurdish_state_event_target }
 			random_list = {
 				55 = {
@@ -4398,7 +2916,6 @@ TUR_kurdish_state_management_category = {
 				value = 1
 				days = 30
 			}
-			add_command_power = -15			
 		}
 	}
 	TUR_counter_the_rebels_in_hakkari = {
@@ -4465,6 +2982,7 @@ TUR_kurdish_state_management_category = {
 
 
 		complete_effect = {
+			add_command_power = -15
 			352 = { save_global_event_target_as = TUR_kurdish_state_event_target }
 			random_list = {
 				55 = {
@@ -4568,7 +3086,6 @@ TUR_kurdish_state_management_category = {
 				value = 1
 				days = 30
 			}
-			add_command_power = -15			
 		}
 	}
 
@@ -4607,7 +3124,6 @@ TUR_kurdish_state_management_category = {
 					353 = { resistance > 50 }
 					352 = { resistance > 50 }
 					800 = { resistance > 50 }
-					680 = { resistance > 50 }
 				}
 				factor = 2
 			}
@@ -4632,10 +3148,6 @@ TUR_kurdish_state_management_category = {
 						is_core_of = KUR
 						is_core_of = TUR
 					}
-					680 = { 
-						is_core_of = KUR
-						is_core_of = TUR
-					}					
 				}
 			}
 		}
@@ -4664,9 +3176,6 @@ TUR_kurdish_state_management_category = {
 					TUR_integrate_kurdish_state_forced_effect = yes
 				}
 			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -4689,17 +3198,17 @@ TUR_kurdish_state_management_category = {
 
 		on_map_mode = map_only
 
-		cost = 100
+		cost = 200
 		ai_will_do = {
 			factor = 10
 			modifier = {
 				factor = 10
-				has_political_power > 250
+				has_political_power > 350
 			}
 			modifier = {
 				has_manpower < 50000
 				has_war = yes
-				has_political_power > 100
+				has_political_power > 200
 				factor = 25
 			}
 		}
@@ -4736,9 +3245,6 @@ TUR_kurdish_state_management_category = {
 				350 = { save_event_target_as = TUR_kurdish_state_event_target }
 				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
 			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -4761,17 +3267,17 @@ TUR_kurdish_state_management_category = {
 
 		on_map_mode = map_only
 
-		cost = 100
+		cost = 200
 		ai_will_do = {
 			factor = 10
 			modifier = {
 				factor = 10
-				has_political_power > 250
+				has_political_power > 350
 			}
 			modifier = {
 				has_manpower < 50000
 				has_war = yes
-				has_political_power > 100
+				has_political_power > 200
 				factor = 25
 			}
 		}
@@ -4808,9 +3314,6 @@ TUR_kurdish_state_management_category = {
 				352 = { save_event_target_as = TUR_kurdish_state_event_target }
 				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
 			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -4833,17 +3336,17 @@ TUR_kurdish_state_management_category = {
 
 		on_map_mode = map_only
 
-		cost = 100
+		cost = 200
 		ai_will_do = {
 			factor = 10
 			modifier = {
 				factor = 10
-				has_political_power > 250
+				has_political_power > 350
 			}
 			modifier = {
 				has_manpower < 50000
 				has_war = yes
-				has_political_power > 100
+				has_political_power > 200
 				factor = 25
 			}
 		}
@@ -4880,9 +3383,6 @@ TUR_kurdish_state_management_category = {
 				353 = { save_event_target_as = TUR_kurdish_state_event_target }
 				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
 			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -4905,17 +3405,17 @@ TUR_kurdish_state_management_category = {
 
 		on_map_mode = map_only
 
-		cost = 100
+		cost = 200
 		ai_will_do = {
 			factor = 10
 			modifier = {
 				factor = 10
-				has_political_power > 250
+				has_political_power > 350
 			}
 			modifier = {
 				has_manpower < 50000
 				has_war = yes
-				has_political_power > 100
+				has_political_power > 200
 				factor = 25
 			}
 		}
@@ -4952,157 +3452,8 @@ TUR_kurdish_state_management_category = {
 				800 = { save_event_target_as = TUR_kurdish_state_event_target }
 				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
 			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
 		}
 	}
-	
-	TUR_integrate_deir_az_zur = {
-
-		icon = faction_tur_kurdish
-
-		available = {
-			680 = {
-				AND = {
-					compliance > 70
-					resistance < 30
-				}
-			}
-			has_completed_focus = TUR_annul_the_ankara_anlasmasi
-		}
-
-		highlight_states = {
-			state = 680
-		}
-
-		on_map_mode = map_only
-
-		cost = 100
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 10
-				has_political_power > 250
-			}
-			modifier = {
-				has_manpower < 50000
-				has_war = yes
-				has_political_power > 100
-				factor = 25
-			}
-		}
-		visible = {
-			OR = {
-				has_completed_focus = TUR_permit_regional_elections
-				has_completed_focus = TUR_a_common_destiny_for_all_of_turkey
-			}
-			680 = {
-				AND = {
-					NOT = { is_core_of = TUR } 
-					is_owned_by = TUR
-				}
-			}
-		}
-
-		complete_effect = {
-			if = {
-				limit = {
-					NOT = {
-						any_owned_state = {
-							AND = {
-								is_core_of = KUR
-								NOT = { is_core_of = TUR }
-								compliance > 70
-								resistance < 30
-							}
-						}
-					}
-				}
-				custom_effect_tooltip = TUR_no_current_integration_targets_available_tt
-			}
-			else = { 
-				680 = { save_event_target_as = TUR_kurdish_state_event_target }
-				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
-			}
-			hidden_effect = {
-				TUR_end_kurdish_sectarianism_effect = yes
-			}
-		}
-	}
-
-	TUR_integrate_mosul = {
-
-		icon = faction_tur_kurdish
-
-		available = {
-			676 = {
-				AND = {
-					compliance > 50
-					resistance < 30
-				}
-			}
-			has_completed_focus = TUR_annul_the_ankara_anlasmasi
-		}
-
-		highlight_states = {
-			state = 676
-		}
-
-		on_map_mode = map_only
-
-		cost = 50
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 10
-				has_political_power > 250
-			}
-			modifier = {
-				has_manpower < 50000
-				has_war = yes
-				has_political_power > 100
-				factor = 25
-			}
-		}
-		visible = {
-			OR = {
-				has_completed_focus = TUR_permit_regional_elections
-				has_completed_focus = TUR_a_common_destiny_for_all_of_turkey
-			}
-			676 = {
-				AND = {
-					NOT = { is_core_of = TUR } 
-					is_owned_by = TUR
-				}
-			}
-		}
-
-		complete_effect = {
-			if = {
-				limit = {
-					NOT = {
-						any_owned_state = {
-							AND = {
-								is_core_of = KUR
-								NOT = { is_core_of = TUR }
-								compliance > 70
-								resistance < 30
-							}
-						}
-					}
-				}
-				custom_effect_tooltip = TUR_no_current_integration_targets_available_tt
-			}
-			else = { 
-				676 = { save_event_target_as = TUR_kurdish_state_event_target }
-				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
-				676 = {
-					remove_core_of = IRQ
-				}
-			}
-		}
-	}	
 }
 
 TUR_fundamentalist_state_management_category = { 
@@ -5184,9 +3535,6 @@ TUR_fundamentalist_state_management_category = {
 				value = 1
 				days = 90
 			}
-			hidden_effect = {
-				TUR_end_islamist_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -5260,9 +3608,6 @@ TUR_fundamentalist_state_management_category = {
 				value = 1
 				days = 60
 			}
-			hidden_effect = {
-				TUR_end_islamist_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -5312,9 +3657,6 @@ TUR_fundamentalist_state_management_category = {
 				value = 1
 				days = 90
 			}
-			hidden_effect = {
-				TUR_end_islamist_sectarianism_effect = yes
-			}
 		}
 	}
 
@@ -5359,30 +3701,35 @@ TUR_fundamentalist_state_management_category = {
 						has_dynamic_modifier = { modifier = islamist_insurgency }
 					}
 				}
+				custom_effect_tooltip = TUR_acquiesce_to_fundamentalists_tt
 				save_global_event_target_as = TUR_fundamentalist_state
-				TUR_downgrade_fundamentalist_defiance_effect = yes
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					OR = {
-						has_dynamic_modifier = { modifier = islamist_opposition }
-						has_dynamic_modifier = { modifier = islamist_sedition }
-						has_dynamic_modifier = { modifier = islamist_insurgency }
-					}
+				hidden_effect = {
+					TUR_downgrade_fundamentalist_defiance_effect = yes
 				}
-				save_global_event_target_as = TUR_fundamentalist_state
-				TUR_downgrade_fundamentalist_defiance_effect = yes
 			}
-			random_owned_controlled_state = {
-				limit = { 
-					OR = {
-						has_dynamic_modifier = { modifier = islamist_opposition }
-						has_dynamic_modifier = { modifier = islamist_sedition }
-						has_dynamic_modifier = { modifier = islamist_insurgency }
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = { 
+						OR = {
+							has_dynamic_modifier = { modifier = islamist_opposition }
+							has_dynamic_modifier = { modifier = islamist_sedition }
+							has_dynamic_modifier = { modifier = islamist_insurgency }
+						}
 					}
+					save_global_event_target_as = TUR_fundamentalist_state
+					TUR_downgrade_fundamentalist_defiance_effect = yes
 				}
-				save_global_event_target_as = TUR_fundamentalist_state
-				TUR_downgrade_fundamentalist_defiance_effect = yes
+				random_owned_controlled_state = {
+					limit = { 
+						OR = {
+							has_dynamic_modifier = { modifier = islamist_opposition }
+							has_dynamic_modifier = { modifier = islamist_sedition }
+							has_dynamic_modifier = { modifier = islamist_insurgency }
+						}
+					}
+					save_global_event_target_as = TUR_fundamentalist_state
+					TUR_downgrade_fundamentalist_defiance_effect = yes
+				}
 			}
 			if = {
 				limit = {
@@ -5395,9 +3742,6 @@ TUR_fundamentalist_state_management_category = {
 				flag = TUR_empowered_fundamentalism_recently_flag
 				value = 1
 				days = 120
-			}
-			hidden_effect = {
-				TUR_end_islamist_sectarianism_effect = yes
 			}
 		}
 	}
@@ -5459,9 +3803,6 @@ TUR_kemalist_state_management_category = {
 				flag = TUR_acted_against_kemalists_recently_flag
 				value = 1
 				days = 75
-			}
-			hidden_effect = {
-				TUR_end_islamist_sectarianism_effect = yes
 			}
 		}
 	}
@@ -5565,7 +3906,6 @@ TUR_the_enemy_within = {
 					value = 1
 					days = 120
 				}
-				TUR_end_islamist_sectarianism_effect = yes
 			}
 		}
 
@@ -5757,7 +4097,6 @@ TUR_the_enemy_within = {
 					value = 1
 					days = 25
 				}
-				TUR_end_islamist_sectarianism_effect = yes
 			}
 			event_target:TUR_kemalist_state_event_target = { TUR_hostile_kemalists_influenced_state_effect = yes }
 		}
@@ -8189,40 +6528,5 @@ category_faction_debug_decisions = {
 			}
 		}
 	}
-	
+
 }
-
-	TUR_war_with_the_soviets = {
-
-		TUR_peace_with_the_soviets = {
-			icon = generic_prepare_civil_war
-
-			available = {
-				has_war_with = SOV
-				
-				TUR = {
-					controls_state = 813
-					controls_state = 229
-					controls_state = 230
-					controls_state = 231
-					controls_state = 233
-				}
-			}
-			fire_only_once = yes
-			#highlight_states =
-
-			#on_map_mode = map_only
-
-			cost = 0
-
-			visible = {
-				has_war_with = SOV
-			}
-
-			cancel_if_not_visible = yes
-
-			complete_effect = {
-				TUR = { country_event = { id = bftb_turkey.148 } }			
-			}
-		}
-	}	
