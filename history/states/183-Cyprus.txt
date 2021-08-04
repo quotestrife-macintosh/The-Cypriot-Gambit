@@ -1,0 +1,30 @@
+state= {
+	id=183
+	name="STATE_183"
+	manpower = 144983
+	
+	state_category = city
+	resources={
+		chromium=15 # was: 4
+		steel = 7
+	}
+
+	history=
+	{
+		owner = ENG
+		add_core_of = CYP
+
+		victory_points = {
+			7193 5
+		}
+		buildings = {
+			air_base = 2
+			infrastructure = 4
+			7193 = {
+				naval_base = 2
+			}
+		}
+
+	}
+	provinces= { 7193 }
+}

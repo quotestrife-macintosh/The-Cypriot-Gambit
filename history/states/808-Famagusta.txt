@@ -1,0 +1,20 @@
+state={
+	id=808
+	name="STATE_808"
+	state_category = rural
+	history = {
+		owner = ENG
+		add_core_of = CYP
+		buildings = {
+			infrastructure = 3
+			13241 = {
+				naval_base = 2
+			}			
+		}
+	}
+	provinces={
+		13241
+	}
+	manpower=34120
+	buildings_max_level_factor=1.000
+}

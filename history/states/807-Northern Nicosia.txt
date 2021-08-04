@@ -1,0 +1,27 @@
+state={
+	id=807
+	name="STATE_807"
+	resources = {
+		chromium = 10
+	}
+	state_category = large_town
+	history = {
+		owner = ENG
+		add_core_of = CYP
+		victory_points = {
+			11984 3
+		}
+
+		buildings = {
+			infrastructure = 4
+			11984 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces={
+		11984 
+	}
+	manpower=86990
+	buildings_max_level_factor=1.000
+}

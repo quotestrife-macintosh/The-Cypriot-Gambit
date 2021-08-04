@@ -1,0 +1,141 @@
+focus_tree = {
+	id = hatay_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = HTY
+			has_dlc = "Battle for the Bosporus"
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 800 y = 200 }
+
+	initial_show_position = {
+		x = 0
+		y = 0
+	}
+
+	focus = {
+		id = HTY_a_new_state
+		icon = GFX_goal_tripartite_pact
+		x = 5
+		y = 0
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}	
+
+	focus = {
+		id = HTY_reorganize_the_hatay_state
+		icon = GFX_goal_reichsautobahn
+		prerequisite = { focus = HTY_a_new_state }
+		x = 5
+		y = 1
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			799 = {
+				set_state_category = rural		
+			}
+		}
+	}	
+
+	focus = {
+		id = HTY_organize_the_hspm
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = HTY_reorganize_the_hatay_state }		
+		x = 5
+		y = 2
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					TUR = {
+						has_government = democratic
+					}
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}				
+			}
+			else = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.1
+				}					
+			}
+		}
+	}
+	
+	focus = {
+		id = HTY_the_mass_exodus
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = HTY_organize_the_hspm }		
+		x = 5
+		y = 3
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			799 = {
+				add_manpower = -26200
+				add_extra_state_shared_building_slots = 2				
+			}
+			677 = {
+				add_manpower = 22150
+			}
+			554 = {
+				add_manpower = 4050
+			}
+		}
+	}	
+	
+	focus = {
+		id = HTY_reunification
+		icon = GFX_focus_generic_befriend_turkey
+		prerequisite = { focus = HTY_the_mass_exodus }				
+		x = 5
+		y = 4
+		cost = 2
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			TUR = {
+				annex_country = { target = HTY transfer_troops = yes }
+				
+				hidden_effect = {
+					799 = {
+						remove_core_of = HTY
+					}
+				}
+			}
+		}
+	}		
+}

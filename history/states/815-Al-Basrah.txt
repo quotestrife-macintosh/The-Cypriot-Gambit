@@ -1,0 +1,25 @@
+state={
+	id=815
+	name="STATE_815"
+	manpower = 21231
+	state_category = rural	
+	history={
+		owner = IRQ
+		victory_points = {
+			2089 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1 
+			2089 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = IRQ
+		add_claim_by = KUR
+	}	
+	provinces={
+		13246 2089
+	}
+	buildings_max_level_factor=1.000
+}

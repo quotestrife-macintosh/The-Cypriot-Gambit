@@ -1,0 +1,20 @@
+state={
+	id=811
+	name="STATE_811"
+	state_category = town
+	history = {
+		owner = ENG
+		add_core_of = CYP	
+		buildings = {
+			infrastructure = 3
+			13236 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces={
+		13236 
+	}
+	manpower=28997
+	buildings_max_level_factor=1.000
+}

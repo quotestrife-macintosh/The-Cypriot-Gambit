@@ -1,0 +1,26 @@
+state={
+	id=810
+	name="STATE_810"
+	state_category = rural
+	history = {
+		owner = ENG
+		add_core_of = CYP
+		victory_points = {
+			13239 1
+		}
+		victory_points = {
+			13238 1
+		}
+		victory_points = {
+			13237 1
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		13238 13237 13239
+	}
+	manpower=36874
+	buildings_max_level_factor=1.000
+}
